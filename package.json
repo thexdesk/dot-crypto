@@ -34,7 +34,9 @@
     "compile": "./compile.sh",
     "prebuild": "yarn compile && rm -rf build",
     "build": "tsc",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.7",
@@ -53,6 +55,8 @@
     "chalk": "^2.4.2",
     "ganache-core": "^2.8.0",
     "web3": "1",
-    "yargs": "^14.0.0"
-  }
+    "yargs": "^14.0.0",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
